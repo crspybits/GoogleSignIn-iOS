@@ -203,10 +203,12 @@ static const NSTimeInterval kMinimumRestoredAccessTokenTimeToExpire = 600.0;
 
 - (void)signInWithConfiguration:(GIDConfiguration *)configuration
        presentingViewController:(UIViewController *)presentingViewController
+               additionalScopes:(nullable NSArray<NSString *> *)additionalScopes
                            hint:(nullable NSString *)hint
                        callback:(nullable GIDSignInCallback)callback {
   GIDSignInInternalOptions *options =
       [GIDSignInInternalOptions defaultOptionsWithConfiguration:configuration
+                                               additionalScopes:additionalScopes
                                        presentingViewController:presentingViewController
                                                       loginHint:hint
                                                        callback:callback];
@@ -214,9 +216,11 @@ static const NSTimeInterval kMinimumRestoredAccessTokenTimeToExpire = 600.0;
 }
 
 - (void)signInWithConfiguration:(GIDConfiguration *)configuration
+               additionalScopes:(nullable NSArray<NSString *> *)additionalScopes
        presentingViewController:(UIViewController *)presentingViewController
                        callback:(nullable GIDSignInCallback)callback {
   [self signInWithConfiguration:configuration
+               additionalScopes:additionalScopes
        presentingViewController:presentingViewController
                            hint:nil
                        callback:callback];
@@ -246,6 +250,7 @@ static const NSTimeInterval kMinimumRestoredAccessTokenTimeToExpire = 600.0;
                                      openIDRealm:self.currentUser.openIDRealm];
   GIDSignInInternalOptions *options =
       [GIDSignInInternalOptions defaultOptionsWithConfiguration:configuration
+                                               additionalScopes: nil
                                        presentingViewController:presentingViewController
                                                       loginHint:self.currentUser.profile.email
                                                        callback:callback];

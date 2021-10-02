@@ -37,6 +37,7 @@
   
   GIDSignInInternalOptions *options =
       [GIDSignInInternalOptions defaultOptionsWithConfiguration:configuration
+                                               additionalScopes:nil
                                        presentingViewController:presentingViewController
                                                       loginHint:loginHint
                                                        callback:callback];

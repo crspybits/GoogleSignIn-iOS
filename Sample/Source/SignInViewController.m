@@ -258,6 +258,7 @@ static NSString * const kClientID =
 
 - (IBAction)signIn:(id)sender {
   [GIDSignIn.sharedInstance signInWithConfiguration:_configuration
+                                   additionalScopes:nil
                            presentingViewController:self
                                            callback:^(GIDGoogleUser * _Nullable user,
                                                       NSError * _Nullable error) {

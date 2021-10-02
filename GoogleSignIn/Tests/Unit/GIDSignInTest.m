@@ -719,6 +719,7 @@ static void *kTestObserverContext = &kTestObserverContext;
 - (void)testPresentingViewControllerException {
   _presentingViewController = nil;
   XCTAssertThrows([_signIn signInWithConfiguration:_configuration
+                                  additionalScopes:nil
                           presentingViewController:_presentingViewController
                                               hint:_hint
                                           callback:_callback]);
@@ -732,6 +733,7 @@ static void *kTestObserverContext = &kTestObserverContext;
   BOOL threw = NO;
   @try {
     [_signIn signInWithConfiguration:configuration
+                    additionalScopes:nil
             presentingViewController:_presentingViewController
                             callback:nil];
   } @catch (NSException *exception) {
@@ -748,6 +750,7 @@ static void *kTestObserverContext = &kTestObserverContext;
   BOOL threw = NO;
   @try {
     [_signIn signInWithConfiguration:_configuration
+                    additionalScopes:nil
             presentingViewController:_presentingViewController
                                 hint:_hint
                             callback:_callback];
@@ -1014,6 +1017,7 @@ static void *kTestObserverContext = &kTestObserverContext;
   } else {
     XCTestExpectation *expectation = [self expectationWithDescription:@"Callback called"];
     [_signIn signInWithConfiguration:_configuration
+                    additionalScopes:nil
             presentingViewController:_presentingViewController
                                 hint:_hint
                             callback:^(GIDGoogleUser * _Nullable user, NSError * _Nullable error) {

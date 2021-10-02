@@ -51,6 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Creates the default options.
 + (instancetype)defaultOptionsWithConfiguration:(nullable GIDConfiguration *)configuration
+                               additionalScopes:(nullable NSArray<NSString *> *)additionalScopes
                        presentingViewController:
                            (nullable UIViewController *)presentingViewController
                                       loginHint:(nullable NSString *)loginHint

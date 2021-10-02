@@ -103,6 +103,7 @@ typedef void (^GIDDisconnectCallback)(NSError *_Nullable error);
 /// @param callback The `GIDSignInCallback` block that is called on completion.  This block will be
 ///     called asynchronously on the main queue.
 - (void)signInWithConfiguration:(GIDConfiguration *)configuration
+               additionalScopes:(nullable NSArray<NSString *> *)additionalScopes
        presentingViewController:(UIViewController *)presentingViewController
                        callback:(nullable GIDSignInCallback)callback;
 
@@ -122,6 +123,7 @@ typedef void (^GIDDisconnectCallback)(NSError *_Nullable error);
 /// @param callback The `GIDSignInCallback` block that is called on completion.  This block will be
 ///     called asynchronously on the main queue.
 - (void)signInWithConfiguration:(GIDConfiguration *)configuration
+               additionalScopes:(nullable NSArray<NSString *> *)additionalScopes
        presentingViewController:(UIViewController *)presentingViewController
                            hint:(nullable NSString *)hint
                        callback:(nullable GIDSignInCallback)callback;
